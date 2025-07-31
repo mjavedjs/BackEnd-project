@@ -6,18 +6,16 @@ import cors from "cors";
 const app = express();
 
 // Middleware
-app.use(cors({
-    origin: process.env.CORS_ORIGIN,
-    credentials: true
+app.use(cors({origin: process.env.CORS_ORIGIN,credentials: true
 }));
 app.use(express.json({ limit: "20kb" }));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use(cookieParser());
 
-import router from "./routes/user.routes.js";
+import userRoutes from "./routes/user.routes.js";
 
 // Routes
-app.use("/api/users", router);
+app.use("/users", userRoutes);
 
-export default app;
+export {app};

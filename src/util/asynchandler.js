@@ -1,13 +1,13 @@
 
 //  by using try catc method
 
-const asynchalder = (fn) =>  async (req,res,next)=>{
+const asynchandler = (fn) =>  async (req,res,next)=>{
     try {
       return   await  fn(req,res,next)
     } catch (error) {
       res.status(error.code || 500).json({
-        sucess:false,
-        messsage:error.messsage
+        success: false,
+        message: error.message
       })
     }
 }
@@ -25,4 +25,4 @@ const asynchalder = (fn) =>  async (req,res,next)=>{
 // }
 
 
-export {asynchalder}
+export  {asynchandler }

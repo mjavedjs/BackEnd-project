@@ -4,9 +4,9 @@ import dotenv from "dotenv";
 dotenv.config(); // Load environment variables first
 
 import connectDB from "./db/index.js"; // MongoDB connection
-import app from "./app.js"; // Express app configuration
+import {app} from "./app.js"; // Express app configuration
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT;
 
 connectDB()
   .then(() => {
