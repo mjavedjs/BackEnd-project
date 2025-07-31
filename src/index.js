@@ -1,17 +1,16 @@
 // index.js
 
 import dotenv from "dotenv";
-dotenv.config(); // Load environment variables first
-
+dotenv.config({path:'.env'}); // Load environment variables first
 import connectDB from "./db/index.js"; // MongoDB connection
 import {app} from "./app.js"; // Express app configuration
 
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 connectDB()
   .then(() => {
     app.listen(PORT, () => {
-      console.log(`✅ App listening on port ${PORT}`);
+      console.log(`✅ App listening on port javed na chail hia  ${PORT}`);
     });
 
     // Optional: Catch server errors
